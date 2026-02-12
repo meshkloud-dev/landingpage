@@ -10,14 +10,17 @@ import {
 
 interface HeaderContextType {
   isVisible: boolean;
+  isMenuOpen: boolean;
 }
 
 const HeaderContext = createContext<HeaderContextType>({
   isVisible: true,
+  isMenuOpen: false,
 });
 
 export const HeaderProvider = ({ children }: { children: ReactNode }) => {
   const [isVisible, setIsVisible] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -50,7 +53,7 @@ export const HeaderProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <HeaderContext.Provider value={{ isVisible }}>
+    <HeaderContext.Provider value={{ isVisible, isMenuOpen }}>
       {children}
     </HeaderContext.Provider>
   );
