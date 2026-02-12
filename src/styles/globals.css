@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+  --background: rgba(255, 255, 255, 1);
+  --foreground: rgba(23, 23, 23, 1);
+
+  --blue: rgba(0, 122, 255, 1);
+
+  --black: rgba(15, 15, 17, 1);
+  --black-bg: rgba(8, 8, 18, 1);
+  --black-64: rgba(15, 15, 17, 0.64);
+  --black-24: rgba(15, 15, 17, 0.24);
+
+  --white: rgba(255, 255, 255, 1);
+  --white-56: rgba(255, 255, 255, 0.56);
+  --white-24: rgba(255, 255, 255, 0.24);
+  --white-12: rgba(255, 255, 255, 0.12);
+
+  --gray-dark: rgba(26, 26, 29, 1);
+  --gray: rgba(92, 93, 109, 1);
+  --gray-light: rgba(247, 247, 247, 1);
+
+  --green: rgba(8, 194, 96, 1);
+  --red: rgba(255, 40, 58, 1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-blue: var(--blue);
+
+  --color-black: var(--black);
+  --color-black-bg: var(--black-bg);
+  --color-black-64: var(--black-64);
+  --color-black-24: var(--black-24);
+
+  --color-white: var(--white);
+  --color-white-56: var(--white-56);
+  --color-white-24: var(--white-24);
+  --color-white-12: var(--white-12);
+
+  --color-gray-dark: var(--gray-dark);
+  --color-gray: var(--gray);
+  --color-gray-light: var(--gray-light);
+
+  --color-green: var(--green);
+  --color-red: var(--red);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  width: 100vw;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .col-center {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  .abs-center {
+    @apply absolute top-1/2 left-1/2 -translate-1/2;
+  }
+
+  .abs-x-center {
+    @apply absolute left-1/2 -translate-x-1/2;
+  }
+
+  .abs-y-center {
+    @apply absolute top-1/2 -translate-y-1/2;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--color-gray);
+    border-radius: 100vh;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-blue);
+  }
+
+  .h-underline,
+  .h-underline-r {
+    position: relative;
+  }
+
+  .h-underline::before,
+  .h-underline-r::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+
+  .h-underline:hover::before,
+  .h-underline-r::before {
+    width: 0;
+  }
+
+  .h-underline-r:hover::before,
+  .group:hover .h-underline-r::before,
+  .h-underline::before,
+  .group:hover .h-underline::before {
+    width: 100%;
+  }
+}
