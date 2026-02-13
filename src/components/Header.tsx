@@ -22,7 +22,7 @@ const Header = () => {
       <Container>
         <div
           className={cn(
-            "bg-black-bg-48 mt-10 flex w-full items-center justify-between rounded-lg p-2.5 text-white backdrop-blur-xs transition-colors duration-300 ease-in-out lg:p-2",
+            "bg-black-bg-48 mt-10 flex w-full items-center justify-between rounded-lg p-2.5 text-white backdrop-blur-xs transition-colors duration-300 ease-in-out lg:p-2 lg:pl-4",
             isMenuOpen && "max-lg:bg-black-bg-80"
           )}
         >

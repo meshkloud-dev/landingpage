@@ -7,7 +7,14 @@ import { cn } from "@/lib/utils";
 
 const Hero = () => {
   return (
-    <section className="relative bg-black pt-36 pb-5 lg:pt-44 lg:pb-10">
+    <section className="relative bg-black-bg pt-36 pb-5 lg:pt-44 lg:pb-10">
+      {/* Background wrapper: 3 gradients + noise */}
+      <div className="hero-features_bg" aria-hidden>
+        <div className="noise-div" />
+        <div className="gradient-1" />
+        <div className="gradient-2" />
+        <div className="gradient-3" />
+      </div>
       <Container className="flex flex-col">
         <div className="relative z-10 flex flex-1 flex-col items-start justify-start text-white">
           <h1 className="font-space-grotesk max-w-[700px] text-5xl leading-[1em] font-bold tracking-[-0.02em] lg:text-[5rem]">

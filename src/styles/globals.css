@@ -9,8 +9,10 @@
   --foreground: rgba(23, 23, 23, 1);
 
   --blue: rgba(0, 122, 255, 1);
+  --blue-24: rgba(0, 122, 255, 0.24);
 
   --black: rgba(15, 15, 17, 1);
+  --black-24: rgba(15, 15, 17, 0.24);
   --black-bg: rgba(8, 8, 18, 1);
   --black-bg-48: rgba(8, 8, 18, 0.48);
   --black-bg-80: rgba(8, 8, 18, 0.8);
@@ -28,6 +30,7 @@
 
   --green: rgba(8, 194, 96, 1);
   --red: rgba(255, 40, 58, 1);
+  --red-24: rgba(255, 40, 58, 0.24);
 
   /* shadcn */
   --radius: 0.625rem;
@@ -67,8 +70,10 @@
   --color-foreground: var(--foreground);
 
   --color-blue: var(--blue);
+  --color-blue-24: var(--blue-24);
 
   --color-black: var(--black);
+  --color-black-24: var(--black-24);
   --color-black-bg: var(--black-bg);
   --color-black-bg-48: var(--black-bg-48);
   --color-black-bg-80: var(--black-bg-80);
@@ -86,6 +91,7 @@
 
   --color-green: var(--green);
   --color-red: var(--red);
+  --color-red-24: var(--red-24);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -251,6 +257,107 @@ body {
     animation: scroll-chevron 1.65s infinite;
     will-change: transform, opacity;
     animation-delay: 1.4s;
+  }
+
+  .hero-features_bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    mask-image: linear-gradient(
+      to bottom,
+      black 30%,
+      black 60%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      black 30%,
+      black 60%,
+      transparent 100%
+    );
+    mask-size: 100% 100%;
+    mask-position: 0 0;
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-position: 0 0;
+  }
+
+  .hero-features_bg .noise-div {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background-image:
+      radial-gradient(circle, transparent 31%, rgba(0, 0, 0, 0.6) 86%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E");
+  }
+
+  .hero-features_bg .gradient-1,
+  .hero-features_bg .gradient-2,
+  .hero-features_bg .gradient-3 {
+    position: absolute;
+    inset: 21% auto 0 0;
+    z-index: 0;
+    filter: blur(21rem);
+    width: 105rem;
+    height: 24rem;
+  }
+
+  .hero-features_bg .gradient-1 {
+    background-color: #007affad;
+    animation: gradientMove1 5s ease-in-out infinite alternate;
+  }
+
+  .hero-features_bg .gradient-2 {
+    background-color: #2391ff3d;
+    width: 101rem;
+    height: 30rem;
+    animation: gradientMove2 6s ease-in-out infinite alternate;
+  }
+
+  .hero-features_bg .gradient-3 {
+    background-color: #2391ff3d;
+    width: 101rem;
+    height: 20rem;
+    animation: gradientMove3 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes gradientMove1 {
+    0% {
+      transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    100% {
+      transform: translate(15.6%, -8.2%) scale(1.05) rotate(0.82deg);
+    }
+  }
+
+  @keyframes gradientMove2 {
+    0% {
+      transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    100% {
+      transform: translate(-13.9%, 15.1%) scale(1.04) rotate(-0.97deg);
+    }
+  }
+
+  @keyframes gradientMove3 {
+    0% {
+      transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    100% {
+      transform: translate(18.9%, 10.4%) scale(1.09) rotate(1.95deg);
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .hero-features_bg .gradient-1 {
+      height: 33rem;
+    }
+    .hero-features_bg .gradient-2,
+    .hero-features_bg .gradient-3 {
+      width: 101rem;
+      height: 44rem;
+    }
   }
 }
 
