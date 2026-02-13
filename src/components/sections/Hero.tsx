@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 const Hero = () => {
   return (
-    <section className="relative bg-black-bg pt-36 pb-5 lg:pt-44 lg:pb-10">
+    <section className="bg-black-bg relative pt-36 pb-5 lg:pt-44 lg:pb-10">
       {/* Background wrapper: 3 gradients + noise */}
       <div className="hero-features_bg" aria-hidden>
         <div className="noise-div" />
@@ -58,7 +58,7 @@ const Hero = () => {
                 </div>
               ))}
               <div className="flex-center relative -ml-2.5 size-10 rounded-full bg-black">
-                <Sparkle className="size-4" />
+                <Sparkle className="sparkle size-2.5" />
               </div>
             </div>
             <p className="max-w-[176px] text-[0.813rem] leading-[1.33em] tracking-[-0.01em] lg:text-[0.938rem] lg:leading-[1.33em]">

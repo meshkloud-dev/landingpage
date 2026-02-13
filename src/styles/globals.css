@@ -322,6 +322,12 @@ body {
     animation: gradientMove3 10s ease-in-out infinite alternate;
   }
 
+  .sparkle {
+    animation: sparkle 3s ease-in-out infinite alternate;
+    animation-delay: 1.5s;
+    will-change: transform, scale;
+  }
+
   @keyframes gradientMove1 {
     0% {
       transform: translate(0, 0) scale(1) rotate(0deg);
@@ -357,6 +363,21 @@ body {
     .hero-features_bg .gradient-3 {
       width: 101rem;
       height: 44rem;
+    }
+  }
+
+  @keyframes sparkle {
+    0% {
+      transform: rotate(0deg);
+      scale: 1;
+    }
+    50% {
+      transform: rotate(180deg);
+      scale: 1.4;
+    }
+    100% {
+      transform: rotate(360deg);
+      scale: 1;
     }
   }
 }
