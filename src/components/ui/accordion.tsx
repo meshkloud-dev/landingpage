@@ -25,13 +25,26 @@ function AccordionItem({
   )
 }
 
+function AccordionHeader({
+  className,
+  ...props
+}: React.ComponentProps<typeof AccordionPrimitive.Header>) {
+  return (
+    <AccordionPrimitive.Header
+      data-slot="accordion-header"
+      className={cn("flex", className)}
+      {...props}
+    />
+  )
+}
+
 function AccordionTrigger({
   className,
   children,
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
   return (
-    <AccordionPrimitive.Header className="flex">
+    <AccordionHeader>
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
@@ -43,7 +56,26 @@ function AccordionTrigger({
         {children}
         <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
       </AccordionPrimitive.Trigger>
-    </AccordionPrimitive.Header>
+    </AccordionHeader>
+  )
+}
+
+function AccordionTriggerButton({
+  className,
+  children,
+  ...props
+}: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
+  return (
+    <AccordionPrimitive.Trigger
+      data-slot="accordion-trigger"
+      className={cn(
+        "focus-visible:border-ring focus-visible:ring-ring/50 flex rounded-md outline-none transition-all focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </AccordionPrimitive.Trigger>
   )
 }
 
@@ -63,4 +95,11 @@ function AccordionContent({
   )
 }
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+export {
+  Accordion,
+  AccordionItem,
+  AccordionHeader,
+  AccordionTrigger,
+  AccordionTriggerButton,
+  AccordionContent,
+}

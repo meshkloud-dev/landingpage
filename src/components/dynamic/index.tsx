@@ -2,6 +2,6 @@
 
 import dynamic from "next/dynamic";
 
-export const SmoothScroll = dynamic(() => import("../SmoothScroll"), {
+export const SmoothScroll = dynamic(() => import("@/components/SmoothScroll"), {
   ssr: false,
 });

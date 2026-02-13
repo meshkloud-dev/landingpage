@@ -11,16 +11,27 @@ import {
 interface HeaderContextType {
   isVisible: boolean;
   isMenuOpen: boolean;
+  openMenu: () => void;
+  closeMenu: () => void;
+  toggleMenu: () => void;
 }
 
 const HeaderContext = createContext<HeaderContextType>({
   isVisible: true,
   isMenuOpen: false,
+  openMenu: () => {},
+  closeMenu: () => {},
+  toggleMenu: () => {},
 });
 
 export const HeaderProvider = ({ children }: { children: ReactNode }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const openMenu = () => setIsMenuOpen(true);
+  const closeMenu = () => setIsMenuOpen(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
@@ -30,6 +41,7 @@ export const HeaderProvider = ({ children }: { children: ReactNode }) => {
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
+        closeMenu();
       } else {
         setIsVisible(true);
       }
@@ -53,7 +65,9 @@ export const HeaderProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <HeaderContext.Provider value={{ isVisible, isMenuOpen }}>
+    <HeaderContext.Provider
+      value={{ isVisible, isMenuOpen, openMenu, closeMenu, toggleMenu }}
+    >
       {children}
     </HeaderContext.Provider>
   );

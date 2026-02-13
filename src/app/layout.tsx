@@ -3,9 +3,9 @@ import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "../styles/globals.css";
 import { cn } from "@/lib/utils";
 import Providers from "@/providers";
-import { SmoothScroll } from "@/components/dynamic";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { SmoothScroll } from "@/components/dynamic";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
