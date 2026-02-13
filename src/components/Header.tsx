@@ -2,7 +2,6 @@
 
 import Button from "./Button";
 import Container from "./Container";
-import CornerUpRightArrow from "./icons/CornerUpRightArrow";
 import Logo from "./icons/Logo";
 import Navigation from "./Navigation";
 import HeaderMobile from "./HeaderMobile";
@@ -38,8 +37,9 @@ const Header = () => {
             <Button
               variant="light"
               className="px-3 py-2 text-[0.938rem] leading-[1.3em] tracking-[-0.01em] lg:px-4 lg:py-2.5"
+              isArrow
             >
-              <CornerUpRightArrow className="size-2.5" /> Join waitlist
+              Join waitlist
             </Button>
           </div>
         </div>

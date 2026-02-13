@@ -38,8 +38,9 @@ const HeaderMobile = () => {
                 "px-4 py-2 text-[0.938rem] leading-[1.3em] tracking-[-0.01em] transition-all duration-200",
                 isMenuOpen && "pointer-events-none opacity-0"
               )}
+              isArrow
             >
-              <CornerUpRightArrow className="size-2.5" /> Join
+              Join
             </Button>
             <AccordionTriggerButton className="bg-white-12 flex w-10 flex-col items-center justify-center gap-1 self-stretch rounded-lg p-2">
               <span
@@ -85,8 +86,9 @@ const HeaderMobile = () => {
               href="#waitlist"
               className="mt-8 w-full px-2 py-4.5 text-[0.938rem]"
               onClick={closeMenu}
+              isArrow
             >
-              <CornerUpRightArrow className="size-3" /> Join Early Access
+              Join Early Access
             </Button>
             <p className="text-white-56 mt-3 text-center text-[0.813rem] leading-[1em]">
               * Launching soon / No spam / Cancel anytime
