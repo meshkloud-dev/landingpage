@@ -218,6 +218,40 @@ body {
   .group:hover .h-underline::before {
     width: 100%;
   }
+
+  @keyframes scroll-chevron {
+    0% {
+      opacity: 0;
+      transform: translateY(-2px);
+    }
+    25% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(2px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+  }
+
+  .anim-chevron-1 {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: scroll-chevron 1.65s infinite;
+    will-change: transform, opacity;
+  }
+
+  .anim-chevron-2 {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: scroll-chevron 1.65s infinite;
+    will-change: transform, opacity;
+    animation-delay: 1.4s;
+  }
 }
 
 @media screen and (min-width: 1024px) {

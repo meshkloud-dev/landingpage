@@ -8,7 +8,7 @@ const Navigation = ({ className }: { className?: string }) => {
         {navigation.map((item) => (
           <li
             key={item.href}
-            className="hover:text-white-56 text-[0.938rem] leading-[1em] tracking-[-0.01em] text-white transition-colors duration-300 ease-in"
+            className="hover:text-white-56 text-lg leading-[1em] font-medium tracking-[-0.01em] text-white transition-colors duration-300 ease-in lg:text-[0.938rem]"
           >
             <Link href={item.href}>{item.label}</Link>
           </li>
