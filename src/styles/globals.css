@@ -380,6 +380,9 @@ body {
       scale: 1;
     }
   }
+
+  .test {
+  }
 }
 
 @media screen and (min-width: 1024px) {
