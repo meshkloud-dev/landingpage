@@ -242,6 +242,15 @@ body {
     }
   }
 
+  @keyframes mesh-features-underline-fill {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
   .anim-chevron-1 {
     transform-box: fill-box;
     transform-origin: center;

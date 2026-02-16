@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 right-0 left-0 z-50 transition-transform duration-300 ease-in-out",
+        "fixed top-0 right-0 left-0 z-50 w-screen transition-transform duration-300 ease-in-out",
         isVisible ? "translate-y-0" : "-translate-y-full"
       )}
     >
