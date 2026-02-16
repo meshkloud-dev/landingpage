@@ -17,7 +17,7 @@ const Hero = () => {
       </div>
       <Container className="flex flex-col">
         <div className="relative z-10 flex flex-1 flex-col items-start justify-start text-white">
-          <h1 className="font-space-grotesk max-w-[700px] text-5xl leading-[1em] font-bold tracking-[-0.02em] lg:text-[5rem]">
+          <h1 className="font-space-grotesk text-5xl leading-[1em] font-bold tracking-[-0.02em] lg:text-[5rem]">
             The All-in-One AEC
             <br />
             Platform, Finally.
@@ -61,7 +61,7 @@ const Hero = () => {
                 <Sparkle className="sparkle size-2.5" />
               </div>
             </div>
-            <p className="max-w-[176px] text-[0.813rem] leading-[1.33em] tracking-[-0.01em] lg:text-[0.938rem] lg:leading-[1.33em]">
+            <p className="max-w-44 text-[0.813rem] leading-[1.33em] tracking-[-0.01em] lg:text-[0.938rem] lg:leading-[1.33em]">
               Reserve your spot <br /> among the first 500 users
             </p>
           </div>

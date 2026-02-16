@@ -2,8 +2,6 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
-
 :root {
   --background: rgba(255, 255, 255, 1);
   --foreground: rgba(23, 23, 23, 1);
@@ -387,6 +385,6 @@ body {
 
 @media screen and (min-width: 1024px) {
   html {
-    font-size: clamp(12px, 1.1111111111vw, 16px);
+    font-size: clamp(12px, 1.1111111111vw, 1.1111111111vw);
   }
 }

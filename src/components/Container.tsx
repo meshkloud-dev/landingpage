@@ -15,7 +15,7 @@ const Container = (
     <div
       ref={forwardedRef}
       className={cn(
-        "mx-auto w-full max-w-[1512px] px-4 md:px-10 lg:px-59",
+        "mx-auto w-full max-w-378 px-4 md:px-10 lg:px-59",
         className
       )}
       {...props}
