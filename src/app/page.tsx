@@ -32,7 +32,6 @@ export default function Home() {
             start: "50% bottom",
             end: "10% 50%",
             scrub: 0.8,
-            markers: true,
           },
         }
       );
