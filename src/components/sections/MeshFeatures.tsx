@@ -72,7 +72,7 @@ export default function MeshFeatures() {
   };
 
   return (
-    <section className="bg-black-bg pt-8 pb-18 text-white lg:py-30">
+    <section className="pt-8 pb-18 text-white lg:py-30">
       <Container>
         <Badge variant="square-light">Mesh features</Badge>
 

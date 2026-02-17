@@ -30,8 +30,8 @@ const Header = () => {
             <HeaderMobile />
           </div>
           <div className="hidden w-full items-center justify-between lg:flex">
-            <Link href="#hero">
-              <Logo />
+            <Link href="#hero" className="block">
+              <Logo className="h-6 w-39.5" />
             </Link>
             <Navigation />
             <Button
