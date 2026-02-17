@@ -28,11 +28,11 @@ export default function Home() {
           opacity: 0,
           ease: "none",
           scrollTrigger: {
-            trigger: meshSectionRef.current,
-            start: "70% top",
-            endTrigger: problemSectionRef.current,
-            end: "top 10%",
+            trigger: problemSectionRef.current,
+            start: "50% bottom",
+            end: "10% 50%",
             scrub: 0.8,
+            markers: true,
           },
         }
       );
