@@ -214,7 +214,6 @@ function SlideContent({
       <Image
         src={img.src}
         alt={img.alt}
-        priority
         quality={80}
         fill
         sizes="(max-width: 768px) 100vw, 740px"

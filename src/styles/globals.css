@@ -388,7 +388,13 @@ body {
     }
   }
 
-  .test {
+  .problem-dots-bg {
+    background-image:
+      url("/images/problem/problem_gray_dots.png"),
+      url("/images/problem/problem_red_dots.png");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    background-position: center;
   }
 }
 
