@@ -400,6 +400,6 @@ body {
 
 @media screen and (min-width: 1024px) {
   html {
-    font-size: clamp(12px, 1.1111111111vw, 1.1111111111vw);
+    font-size: 1.12434vw;
   }
 }

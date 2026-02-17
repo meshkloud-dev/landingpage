@@ -5,6 +5,7 @@ import Hero from "@/components/sections/Hero";
 import MeshFeatures from "@/components/sections/MeshFeatures";
 import Problem from "@/components/sections/Problem";
 import { gsap, useGSAP, ScrollTrigger } from "@/lib/gsap";
+import Solution from "@/components/sections/Solution";
 
 export default function Home() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -58,6 +59,7 @@ export default function Home() {
         <div ref={problemSectionRef}>
           <Problem />
         </div>
+        <Solution />
       </div>
     </div>
   );
