@@ -242,6 +242,15 @@ body {
     }
   }
 
+  @keyframes mesh-features-underline-fill {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
   .anim-chevron-1 {
     transform-box: fill-box;
     transform-origin: center;
@@ -379,12 +388,18 @@ body {
     }
   }
 
-  .test {
+  .problem-dots-bg {
+    background-image:
+      url("/images/problem/problem_gray_dots.png"),
+      url("/images/problem/problem_red_dots.png");
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    background-position: center;
   }
 }
 
 @media screen and (min-width: 1024px) {
   html {
-    font-size: clamp(12px, 1.1111111111vw, 1.1111111111vw);
+    font-size: 1.12434vw;
   }
 }

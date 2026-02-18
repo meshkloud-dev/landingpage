@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="gradient-2" />
         <div className="gradient-3" />
       </div>
-      <Container className="flex flex-col">
+      <Container className="relative flex flex-col">
         <div className="relative z-10 flex flex-1 flex-col items-start justify-start text-white">
           <h1 className="font-space-grotesk text-5xl leading-[1em] font-bold tracking-[-0.02em] lg:text-[5rem]">
             The All-in-One AEC
@@ -72,6 +72,9 @@ const Hero = () => {
           alt="Hero"
           fill
           className="absolute inset-0 z-0 object-cover object-top"
+          priority
+          quality={80}
+          sizes="(max-width: 768px) 100vw, 1512px"
         />
       </Container>
     </section>

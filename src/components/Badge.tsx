@@ -25,8 +25,17 @@ const Badge = ({ variant, children }: Props) => {
 
   return (
     <div className="flex w-fit items-center gap-3 rounded-xs">
-      <div className={cn("flex-center size-4 rounded-xs", variants[variant])}>
-        {variant.startsWith("zap") ? <Zap /> : <Square />}
+      <div
+        className={cn(
+          "flex size-4 shrink-0 items-center justify-center rounded-xs",
+          variants[variant]
+        )}
+      >
+        {variant.startsWith("zap") ? (
+          <Zap className="size-2.5" />
+        ) : (
+          <Square className="size-1.5" />
+        )}
       </div>
       <p className="font-geist-mono text-[0.813rem] leading-[1.23em] tracking-[-0.01em] lg:text-[0.938rem] lg:leading-[1.33em]">
         {children}
