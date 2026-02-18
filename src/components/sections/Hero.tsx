@@ -7,15 +7,18 @@ import { cn } from "@/lib/utils";
 
 const Hero = () => {
   return (
-    <section className="bg-black-bg relative pt-36 pb-5 lg:pt-44 lg:pb-10">
-      {/* Background wrapper: 3 gradients + noise */}
-      <div className="hero-features_bg" aria-hidden>
-        <div className="noise-div" />
-        <div className="gradient-1" />
-        <div className="gradient-2" />
-        <div className="gradient-3" />
-      </div>
-      <Container className="relative flex flex-col">
+    <section className="ambient-glow hero-fade-bottom bg-black-bg relative pt-36 pb-5 lg:pt-44 lg:pb-10">
+      {/* Noise overlay */}
+      <Image
+        src="/images/noise.png"
+        alt=""
+        fill
+        priority
+        quality={80}
+        className="pointer-events-none absolute inset-0 z-1 object-cover opacity-40 mix-blend-overlay"
+        aria-hidden
+      />
+      <Container className="relative z-10 flex flex-col">
         <div className="relative z-10 flex flex-1 flex-col items-start justify-start text-white">
           <h1 className="font-space-grotesk text-5xl leading-[1em] font-bold tracking-[-0.02em] lg:text-[5rem]">
             The All-in-One AEC
@@ -35,7 +38,6 @@ const Hero = () => {
           </div>
           <ScrollToLearnMore className="mt-9 flex lg:hidden" />
         </div>
-
         <div className="relative z-10 mt-64.5 flex w-full justify-center lg:justify-between">
           <ScrollToLearnMore className="hidden lg:flex" />
           <div className="flex items-center gap-3 text-white lg:gap-4">
@@ -66,7 +68,7 @@ const Hero = () => {
             </p>
           </div>
         </div>
-
+        {/* Hero background */}
         <Image
           src="/images/hero_bg.png"
           alt="Hero"
