@@ -36,7 +36,7 @@ const MeshAI = () => {
     <section className="bg-blue relative mt-18 pt-18 pb-35.5 text-white lg:mt-30 lg:pt-30 lg:pb-67">
       <Image
         src="/images/noise.png"
-        alt=""
+        alt="Noise"
         fill
         priority
         quality={80}
@@ -61,27 +61,28 @@ const MeshAI = () => {
         </div>
         <div className="mt-15.5 lg:mt-31">
           {meshAIItems.map((item) => (
-            <div
+            <button
               key={item.id}
-              className="bg-white-96 flex items-center gap-4 rounded-full px-10 py-[0.938rem] lg:gap-8 lg:py-5"
+              className="bg-white-96 flex w-full items-center gap-4 rounded-full px-10 py-[0.938rem] lg:gap-8 lg:py-5"
             >
               <DiamondDots className="text-blue size-5 lg:size-8" />
               <h3 className="text-[0.813rem] leading-[1em] tracking-[-0.01em] text-black lg:text-[1.375rem]">
                 {item.title}
               </h3>
-            </div>
+            </button>
           ))}
         </div>
       </Container>
-      <Image
-        src="/images/mesh_ai_bg.png"
-        alt="Hero"
-        fill
-        className="absolute inset-0 z-0 object-cover object-top"
-        priority
-        quality={80}
-        sizes="(max-width: 768px) 100vw, 1512px"
-      />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-full max-h-80 overflow-hidden lg:max-h-110.5">
+        <Image
+          src="/images/mesh_ai_bg.png"
+          alt="Mesh AI background"
+          fill
+          className="object-cover"
+          quality={80}
+          sizes="100vw"
+        />
+      </div>
     </section>
   );
 };
