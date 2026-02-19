@@ -74,7 +74,7 @@ const Solution = () => {
       <Container>
         <div>
           <Badge variant="zap-blue">Solution</Badge>
-          <h2 className="font-space-grotesk mt-4 max-w-2xl text-2xl font-bold tracking-[-0.04em] lg:mt-6 lg:text-5xl lg:font-medium">
+          <h2 className="font-space-grotesk mt-4 max-w-175 text-2xl font-bold tracking-[-0.04em] lg:mt-6 lg:text-5xl lg:font-medium">
             One platform. Every phase. <br />
             Every discipline.
           </h2>

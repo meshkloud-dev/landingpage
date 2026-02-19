@@ -59,7 +59,7 @@ const MESH_FEATURES_ITEMS: MeshFeaturesItem[] = [
   },
 ];
 
-export default function MeshFeatures() {
+const MeshFeatures = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [progressKey, setProgressKey] = useState(0);
 
@@ -76,7 +76,7 @@ export default function MeshFeatures() {
       <Container>
         <Badge variant="square-light">Mesh features</Badge>
 
-        <h2 className="font-space-grotesk mt-4 text-2xl font-bold tracking-[-0.04em] lg:mt-6 lg:text-5xl lg:font-medium">
+        <h2 className="font-space-grotesk mt-4 max-w-175 text-2xl font-bold tracking-[-0.04em] lg:mt-6 lg:text-5xl lg:font-medium">
           From Concept to Completion <br /> One Source of Truth.
         </h2>
 
@@ -195,15 +195,17 @@ export default function MeshFeatures() {
       </Container>
     </section>
   );
-}
+};
 
-function SlideContent({
+export default MeshFeatures;
+
+const SlideContent = ({
   img,
   className,
 }: {
   img: ImageType;
   className?: string;
-}) {
+}) => {
   return (
     <div
       className={cn(
@@ -221,4 +223,4 @@ function SlideContent({
       />
     </div>
   );
-}
+};

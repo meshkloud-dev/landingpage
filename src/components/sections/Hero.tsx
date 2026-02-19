@@ -15,7 +15,7 @@ const Hero = () => {
         fill
         priority
         quality={80}
-        className="pointer-events-none absolute inset-0 z-1 object-cover opacity-40 mix-blend-overlay"
+        className="pointer-events-none absolute inset-0 z-1 object-cover opacity-40"
         aria-hidden
       />
       <Container className="relative z-10 flex flex-col">

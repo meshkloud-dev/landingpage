@@ -220,7 +220,7 @@ const ProblemMobile = () => {
 const ProblemSectionHeader = () => (
   <div>
     <Badge variant="square-red">Problem</Badge>
-    <h2 className="font-space-grotesk mt-4 max-w-2xl text-2xl font-bold tracking-[-0.04em] lg:mt-6 lg:text-5xl lg:font-medium">
+    <h2 className="font-space-grotesk mt-4 max-w-175 text-2xl font-bold tracking-[-0.04em] lg:mt-6 lg:text-5xl lg:font-medium">
       Every project is slowed down by <br />
       one thing → fragmentation.
     </h2>
