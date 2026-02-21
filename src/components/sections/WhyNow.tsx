@@ -2,6 +2,8 @@ import Image from "next/image";
 import Badge from "../Badge";
 import Button from "../Button";
 import Container from "../Container";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 const whyNowItems = [
   {
@@ -16,9 +18,19 @@ const whyNowItems = [
 ];
 
 const WhyNow = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <section className="pt-18 lg:pt-30">
-      <Container>
+      <Container className="relative">
         <Badge variant="zap-dark">Why now?</Badge>
         <h2 className="font-space-grotesk mt-4 max-w-175 text-2xl font-bold tracking-[-0.04em] lg:mt-6 lg:text-5xl lg:font-medium">
           Why AEC can’t afford <br /> disconnected tools anymore
@@ -34,13 +46,19 @@ const WhyNow = () => {
           ))}
         </ul>
         <div className="relative flex w-full flex-col-reverse overflow-hidden rounded-lg bg-black text-white max-lg:mt-6 lg:grid lg:h-100 lg:grid-cols-[27rem_1fr] lg:items-end">
-          <div className="relative z-10 flex h-full flex-col gap-4 p-4 pt-0 max-lg:mt-[1.438rem] lg:justify-between lg:p-8 lg:pr-0 lg:pb-7">
+          <div className="relative z-10 flex h-full flex-col gap-4 p-4 pt-0 max-lg:mx-auto max-lg:mt-[1.438rem] max-lg:max-w-xl lg:justify-between lg:p-8 lg:pr-0 lg:pb-7">
             <h3 className="text-[1.125rem] font-semibold tracking-[-0.01em] lg:text-[1.375rem]">
               MeshKloud exists because the way projects are delivered has
               changed, and the tools finally need to catch up.
             </h3>
-            <div>
-              <Button variant="light" isArrow>
+            <div className="flex flex-col max-lg:w-full max-lg:items-center">
+              <Button
+                variant="light"
+                isArrow
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className="max-lg:w-full"
+              >
                 Secure Your Early Access
               </Button>
               <p className="text-white-56 mt-3 text-[0.813rem] leading-[1.23em] tracking-[-0.01em] max-lg:text-center lg:mt-4 lg:text-[0.938rem] lg:leading-[1.33em]">
@@ -63,17 +81,22 @@ const WhyNow = () => {
               fill
               sizes="(min-width: 1024px) 70vw, 100vw"
               quality={80}
-              className="absolute inset-0 z-3 object-cover"
+              className={cn(
+                "absolute inset-0 z-3 object-cover opacity-0 transition-opacity duration-300 ease-in",
+                isHovered && "opacity-100"
+              )}
             />
           </div>
-          <Image
-            src="/images/why-now/noise.png"
-            alt="Noise"
-            fill
-            sizes="100vw"
-            quality={80}
-            className="absolute inset-0 z-0 object-cover"
-          />
+          <div className="absolute inset-0 z-0 h-full w-full opacity-100 mix-blend-overlay">
+            <Image
+              src="/images/why-now/noise.png"
+              alt="Noise"
+              fill
+              sizes="100vw"
+              quality={80}
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
       </Container>
     </section>
