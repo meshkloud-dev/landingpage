@@ -37,7 +37,7 @@ const Badge = ({ variant, children }: Props) => {
           <Square className="size-1.5" />
         )}
       </div>
-      <p className="font-geist-mono text-[0.813rem] leading-[1.23em] tracking-[-0.01em] lg:text-[0.938rem] lg:leading-[1.33em]">
+      <p className="font-mono text-[0.813rem] leading-[1.23em] tracking-[-0.01em] lg:text-[0.938rem] lg:leading-[1.33em]">
         {children}
       </p>
     </div>
