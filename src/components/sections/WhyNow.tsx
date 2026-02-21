@@ -45,7 +45,7 @@ const WhyNow = () => {
             </li>
           ))}
         </ul>
-        <div className="relative flex w-full flex-col-reverse overflow-hidden rounded-lg bg-black text-white max-lg:mt-6 lg:grid lg:h-100 lg:grid-cols-[27rem_1fr] lg:items-end">
+        <div className="relative mt-6 flex w-full flex-col-reverse overflow-hidden rounded-lg bg-black text-white lg:mt-4 lg:grid lg:h-100 lg:grid-cols-[27rem_1fr] lg:items-end">
           <div className="relative z-10 flex h-full flex-col gap-4 p-4 pt-0 max-lg:mx-auto max-lg:mt-[1.438rem] max-lg:max-w-xl lg:justify-between lg:p-8 lg:pr-0 lg:pb-7">
             <h3 className="text-[1.125rem] font-semibold tracking-[-0.01em] lg:text-[1.375rem]">
               MeshKloud exists because the way projects are delivered has

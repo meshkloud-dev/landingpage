@@ -29,28 +29,28 @@ const problemItems: ProblemItem[] = [
     title: "Too Many Tools. No Ownership.",
     description:
       "Work is scattered across apps, with no clear source of truth or accountability.",
-    img: { src: "/images/problem/problem_1.webp", alt: "Problem" },
+    img: { src: "/images/problem/problem_1.png", alt: "Problem" },
   },
   {
     id: "decisions-get-lost",
     title: "Decisions Get Lost",
     description:
       "RFIs, clarifications, and changes disappear, weakening design intent over time.",
-    img: { src: "/images/problem/problem_2.webp", alt: "Problem" },
+    img: { src: "/images/problem/problem_2.png", alt: "Problem" },
   },
   {
     id: "schedules-slip",
     title: "Schedules Slip",
     description:
       "Small, unseen delays compound until timelines break all at once.",
-    img: { src: "/images/problem/problem_3.webp", alt: "Problem" },
+    img: { src: "/images/problem/problem_3.png", alt: "Problem" },
   },
   {
     id: "busy-but-misaligned",
     title: "Busy, But Misaligned",
     description:
       "Teams stay active, but manual coordination replaces real progress.",
-    img: { src: "/images/problem/problem_4.webp", alt: "Problem" },
+    img: { src: "/images/problem/problem_4.png", alt: "Problem" },
   },
 ];
 
@@ -72,18 +72,17 @@ const ProblemDesktop = () => {
           <div className="absolute -top-15 left-1/2 z-0 h-full w-315 -translate-x-1/2">
             <Image
               src="/images/problem/problem_gray_dots.png"
-              alt="Problem overlay"
+              alt="Problem gray dots"
               fill
-              className="object-contain object-center"
               quality={80}
-              sizes="1260px"
+              className="object-contain"
             />
             <Image
               src="/images/problem/problem_red_dots.png"
-              alt="Problem background"
+              alt="Problem red dots"
               fill
-              className="z-10 object-contain object-center"
-              sizes="1260px"
+              quality={80}
+              className="object-contain"
             />
           </div>
           <ul className="relative mt-14 grid grid-cols-4 gap-14.5">
@@ -91,14 +90,15 @@ const ProblemDesktop = () => {
               <li key={item.id}>
                 <div className="relative max-w-53.5">
                   <div className="to-black-bg absolute bottom-0 left-0 h-32 w-px rounded-sm bg-linear-to-b from-transparent" />
-                  <Image
-                    src={item.img.src}
-                    alt={item.img.alt}
-                    width={214}
-                    height={152}
-                    quality={80}
-                    className="h-auto w-full"
-                  />
+                  <div className="relative aspect-214/152">
+                    <Image
+                      src={item.img.src}
+                      alt={item.img.alt}
+                      fill
+                      quality={80}
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
                 <div className="max-w-55 lg:mt-4">
                   <h3 className="text-lg leading-[1.2em] font-medium tracking-[-0.01em] capitalize lg:text-[1.375rem]">
@@ -152,7 +152,7 @@ const ProblemMobile = () => {
               style={{
                 width: `calc(${problemItems.length} * 100vw + ${problemItems.length - 1} * 1rem)`,
                 backgroundImage:
-                  "url(/images/problem/problem_red_dots.webp), url(/images/problem/problem_gray_dots.webp)",
+                  "url(/images/problem/problem_red_dots.png), url(/images/problem/problem_gray_dots.png)",
                 backgroundRepeat: "repeat-x, repeat-x",
                 backgroundSize: "auto 100%, auto 100%",
               }}
@@ -166,8 +166,9 @@ const ProblemMobile = () => {
                   src={item.img.src}
                   alt={item.img.alt}
                   fill
-                  className="h-full w-full object-contain drop-shadow-xs"
-                  sizes="(max-width: 640px) 80vw, 214px"
+                  quality={80}
+                  className="h-full w-full object-contain"
+                  sizes="(min-width: 1024px) 30vw, 80vw"
                 />
               </div>
             ))}

@@ -77,7 +77,7 @@ const MeshAI = () => {
   const innersRef = useRef<(HTMLButtonElement | null)[]>([]);
   const iconWrappersRef = useRef<(HTMLSpanElement | null)[]>([]);
 
-  const animateFrontIcon = useCallback((nextFront: number) => {
+  const animateFrontIcon = useCallback((nextFront: number, delay = 0) => {
     const icons = iconWrappersRef.current.filter(Boolean) as HTMLSpanElement[];
     if (icons.length !== STACK_SIZE) return;
 
@@ -92,6 +92,7 @@ const MeshAI = () => {
     if (!el) return;
 
     gsap.to(el, {
+      delay,
       keyframes: [
         { rotation: 200, duration: 0.45, ease: "power2.out" },
         { rotation: 180, duration: 0.2, ease: "power1.out" },
@@ -117,12 +118,13 @@ const MeshAI = () => {
       return;
     }
 
+    animateFrontIcon(next, 0.15);
+
     const tl = gsap.timeline({
       defaults: { duration: ANIM_DURATION, ease: "power2.inOut" },
       onComplete: () => {
         prevFrontRef.current = next;
         isAnimatingRef.current = false;
-        animateFrontIcon(next);
       },
     });
 
@@ -192,17 +194,7 @@ const MeshAI = () => {
   }, [goNext]);
 
   return (
-    <section className="relative mt-18 pt-18 pb-35.5 text-white lg:mt-30 lg:pt-30 lg:pb-67">
-      <Image
-        src="/images/noise.png"
-        alt="Noise"
-        fill
-        priority
-        quality={80}
-        className="pointer-events-none absolute inset-0 z-1 object-cover opacity-40"
-        aria-hidden
-      />
-
+    <section className="relative mt-18 pt-18 pb-51.5 text-white lg:mt-30 lg:pt-30 lg:pb-89.5">
       <Container className="relative z-10">
         <div className="flex flex-col items-center justify-center text-center">
           <Badge variant="square-light">Mesh AI</Badge>
@@ -210,7 +202,9 @@ const MeshAI = () => {
             Make It Magical{" "}
             <span className="inline-block">
               <span className="flex-center">
-                (<DiamondDots />)
+                (
+                <DiamondDots className="relative top-0.5 left-px size-5 lg:top-1 lg:size-10" />
+                )
               </span>
             </span>{" "}
             Intelligence woven into every workflow.
@@ -282,6 +276,17 @@ const MeshAI = () => {
           className="object-cover"
           quality={80}
           sizes="100vw"
+        />
+      </div>
+
+      <div className="absolute inset-0 z-0 h-full w-full opacity-12 mix-blend-overlay">
+        <Image
+          src="/images/mesh_ai_noise.png"
+          alt="Noise"
+          fill
+          sizes="100vw"
+          quality={80}
+          className="h-full w-full object-cover"
         />
       </div>
     </section>

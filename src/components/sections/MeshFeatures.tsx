@@ -216,9 +216,9 @@ const SlideContent = ({
       <Image
         src={img.src}
         alt={img.alt}
-        quality={80}
         fill
-        sizes="(max-width: 768px) 100vw, 740px"
+        quality={80}
+        sizes="(min-width: 1024px) 80vw, 100vw"
         className="object-cover"
       />
     </div>

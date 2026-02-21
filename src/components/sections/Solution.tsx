@@ -117,7 +117,8 @@ const Solution = () => {
                         src={item.img.src}
                         alt={item.img.alt}
                         width={336}
-                        height={275}
+                        height={283}
+                        sizes="(min-width: 1024px) 33vw, 100vw"
                         className="h-auto w-full"
                       />
                     </div>
