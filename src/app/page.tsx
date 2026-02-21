@@ -8,6 +8,7 @@ import { gsap, useGSAP, ScrollTrigger } from "@/lib/gsap";
 import Solution from "@/components/sections/Solution";
 import MeshAI from "@/components/sections/MeshAI";
 import WhyNow from "@/components/sections/WhyNow";
+import Builders from "@/components/sections/Builders";
 
 export default function Home() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -112,6 +113,7 @@ export default function Home() {
         </div>
       </div>
       <WhyNow />
+      <Builders />
     </div>
   );
 }

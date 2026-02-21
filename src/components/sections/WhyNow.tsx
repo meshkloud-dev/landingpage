@@ -39,7 +39,7 @@ const WhyNow = () => {
           {whyNowItems.map((item, idx) => (
             <li key={idx} className="relative flex items-start gap-4 lg:gap-8">
               <div className="to-black-bg h-14 w-px shrink-0 rounded-sm bg-linear-to-t from-transparent lg:h-44" />
-              <h3 className="max-w-59 text-[0.938rem] leading-[1.2em] font-medium tracking-[-0.01em] lg:text-[1.375rem]">
+              <h3 className="max-w-59 text-[0.938rem] leading-[1.2em] font-medium tracking-[-0.01em] capitalize lg:text-[1.375rem]">
                 {item.title}
               </h3>
             </li>

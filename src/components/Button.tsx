@@ -71,7 +71,7 @@ export default function Button({
   ...rest
 }: ButtonProps) {
   const style = cn(
-    "group inline-flex items-center justify-center gap-2 rounded-lg px-6 py-4.5 lg:py-4",
+    "group inline-flex items-center justify-center gap-2 rounded-lg px-6 py-4.5 lg:py-4 capitalize",
     "leading-[1em] tracking-[-0.01em] text-[1.063rem] font-medium",
     "transition-colors duration-200 ease-in",
     "disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed",
