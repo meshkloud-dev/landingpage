@@ -7,36 +7,56 @@ import Badge from "../Badge";
 import Container from "../Container";
 import { cn } from "@/lib/utils";
 import Fade from "embla-carousel-fade";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, LucideIcon } from "lucide-react";
+import { type Image as ImageType } from "@/types";
 
-const slides = [
+type Slide = {
+  id: string;
+  title: string;
+  description: string;
+  image: ImageType;
+};
+
+const slides: Slide[] = [
   {
     id: "architects",
     title: "Architects",
     description:
       "Protect your design intent → all the way to site. MeshKloud keeps architectural decisions clear and connected, so RFIs, approvals, and changes stay true to the design.",
-    image: "/images/builders/architects.png",
+    image: {
+      src: "/images/builders/architects.png",
+      alt: "Architects",
+    },
   },
   {
     id: "contractors",
     title: "Contractors",
     description:
       "Build with clarity → from plan to site. MeshKloud keeps schedules, RFIs, and field decisions connected in real time, so teams move faster, reduce rework, and keep projects safe and on track.",
-    image: "/images/builders/contractors.png",
+    image: {
+      src: "/images/builders/contractors.png",
+      alt: "Contractors",
+    },
   },
   {
     id: "developers",
     title: "Developers",
     description:
       "See the whole project → without chasing updates. MeshKloud provides real-time visibility into progress, risk, and decisions across every phase, helping protect timelines, budgets, and outcomes with confidence.",
-    image: "/images/builders/developers.png",
+    image: {
+      src: "/images/builders/developers.png",
+      alt: "Developers",
+    },
   },
   {
     id: "owners",
     title: "Owners",
     description:
       "Confidence at every stage of delivery. MeshKloud aligns teams, documents decisions, and makes progress transparent, giving owners clarity and trust throughout the full project lifecycle.",
-    image: "/images/builders/owners.png",
+    image: {
+      src: "/images/builders/owners.png",
+      alt: "Owners",
+    },
   },
 ];
 
@@ -88,18 +108,16 @@ const Builders = () => {
                 className="relative min-h-dvh min-w-0 flex-[0_0_100%]"
               >
                 <Image
-                  src={slide.image}
-                  alt={slide.title}
+                  src={slide.image.src}
+                  alt={slide.image.alt}
                   fill
                   className="object-cover"
                   sizes="100vw"
                 />
-
                 <div
                   className="absolute inset-0 bg-linear-to-b from-transparent to-black/72"
                   aria-hidden
                 />
-
                 <Container className="absolute inset-0 flex flex-col justify-end py-10 lg:py-14">
                   <div className="flex h-full w-full flex-col justify-end rounded-lg border border-white p-4 lg:p-10">
                     <h3 className="font-space-grotesk text-2xl leading-[1.17em] font-bold tracking-[-0.04em] text-shadow-[0_6px_16px_rgba(15,15,17,0.16)] lg:text-[3rem] lg:leading-[1.08em]">
@@ -125,7 +143,7 @@ const Builders = () => {
                         >
                           <span
                             className={cn(
-                              "block size-1.5 rounded-xs bg-white transition-colors duration-300 ease-in",
+                              "block size-1.5 rounded-xs transition-colors duration-300 ease-in",
                               selectedIndex === i
                                 ? "bg-white"
                                 : "bg-black group-hover:bg-white"
@@ -136,28 +154,8 @@ const Builders = () => {
                       ))}
                     </div>
                     <div className="hidden gap-2 lg:flex">
-                      <button
-                        type="button"
-                        onClick={scrollPrev}
-                        className="group relative flex items-center justify-center overflow-hidden rounded-sm bg-white px-3 py-2.5 text-black transition-colors duration-300 ease-in hover:bg-gray-300"
-                      >
-                        <span className="relative block">
-                          <ArrowLeft className="size-5 translate-x-0 opacity-100 transition duration-200 ease-in group-hover:-translate-x-full group-hover:opacity-0" />
-
-                          <ArrowLeft className="absolute inset-0 size-5 translate-x-full opacity-0 transition duration-200 ease-in group-hover:translate-x-0 group-hover:opacity-100" />
-                        </span>
-                      </button>
-                      <button
-                        type="button"
-                        onClick={scrollNext}
-                        className="group flex items-center justify-center rounded-sm bg-white px-3 py-2.5 text-black transition-colors duration-300 ease-in hover:bg-gray-300"
-                      >
-                        <span className="relative block">
-                          <ArrowRight className="size-5 translate-x-0 opacity-100 transition duration-200 ease-in group-hover:-translate-x-full group-hover:opacity-0" />
-
-                          <ArrowRight className="absolute inset-0 size-5 translate-x-full opacity-0 transition duration-200 ease-in group-hover:translate-x-0 group-hover:opacity-100" />
-                        </span>
-                      </button>
+                      <SlideNavButton Icon={ArrowLeft} onClick={scrollPrev} />
+                      <SlideNavButton Icon={ArrowRight} onClick={scrollNext} />
                     </div>
                   </div>
                 </Container>
@@ -171,3 +169,22 @@ const Builders = () => {
 };
 
 export default Builders;
+
+const SlideNavButton = ({
+  Icon,
+  onClick,
+}: {
+  Icon: LucideIcon;
+  onClick: () => void;
+}) => (
+  <button
+    type="button"
+    onClick={onClick}
+    className="group relative flex items-center justify-center overflow-hidden rounded-sm bg-white px-3 py-2.5 text-black transition-colors duration-300 ease-in hover:bg-gray-300"
+  >
+    <span className="relative block">
+      <Icon className="size-5 translate-x-0 opacity-100 transition duration-200 ease-in group-hover:-translate-x-full group-hover:opacity-0" />
+      <Icon className="absolute inset-0 size-5 translate-x-full opacity-0 transition duration-200 ease-in group-hover:translate-x-0 group-hover:opacity-100" />
+    </span>
+  </button>
+);
